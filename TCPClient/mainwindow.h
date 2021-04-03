@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTcpSocket>
+#include <QTcpServer>
 #include <QMessageBox>
 #include <QDebug>
 
@@ -20,6 +21,7 @@ public:
 
     QTcpSocket* socket;
     QByteArray Data;
+    QTcpServer *tcpServer = nullptr;
 
 public slots:
     void sockReady();

@@ -14,9 +14,10 @@ void Server::startServer()
 {
     QString ipAddress;
     QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
+
     tcpServer = new QTcpServer(this);
 
-    int port = 8080;
+    int port = 5556;
     if (this->listen(QHostAddress(QHostAddress::LocalHost), port))
     {
         qDebug() << "Listening from port " << port;

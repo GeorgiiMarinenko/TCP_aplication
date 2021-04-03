@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QtNetwork>
+#include <QtCore>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +22,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    socket->connectToHost("127.0.0.1", 4435);//если удаленный то сменить адрес
+    tcpServer = new QTcpServer(this);
+    QString ipAddress;
+    socket->connectToHost("127.0.0.1", 0);//если удаленный то сменить адрес
+    ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
+    qDebug() << "The server is running on\n\nIP: " << ipAddress << "\nport: " << tcpServer->serverAddress() << "\n\n";
 }
 
 void MainWindow::sockDisc()
@@ -30,10 +36,7 @@ void MainWindow::sockDisc()
 
 void MainWindow::sockReady()
 {
-    if (socket->waitForConnected(500))//0.5 sec waiting
-    {
-        socket->waitForReadyRead(500);
+        socket->waitForReadyRead(5000);
         Data = socket->readAll();
-        qDebug() << Data;
-    }
+        qDebug() << Data.constData();
 }
