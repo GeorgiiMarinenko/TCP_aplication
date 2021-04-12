@@ -17,10 +17,10 @@ void Server::startServer()
 
     tcpServer = new QTcpServer(this);
 
-    int port = 5556;
-    if (this->listen(QHostAddress(QHostAddress::LocalHost), port))
+    int port = 45383;
+    if (tcpServer->listen(QHostAddress(QHostAddress::LocalHost), port))
     {
-        qDebug() << "Listening from port " << port;
+       /* qDebug() << "Listening from port " << port*/;
         ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
         qDebug() << "The server is running on\n\nIP: " << ipAddress << "\nport: " << tcpServer->serverPort() << "\n\n";
     }
