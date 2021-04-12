@@ -22,11 +22,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    tcpServer = new QTcpServer(this);
     QString ipAddress;
-    socket->connectToHost("127.0.0.1", 0);//если удаленный то сменить адрес
+    QString ListeningState;
+    ListeningState = (socket->ListeningState);
+    qDebug() << "First: " << ListeningState;
+    socket->connectToHost("127.0.0.1", 45383);//если удаленный то сменить адрес
+    ListeningState = (socket->ListeningState);
     ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
-    qDebug() << "The server is running on\n\nIP: " << ipAddress << "\nport: " << tcpServer->serverAddress() << "\n\n";
+    qDebug() << "The server is running on\n\nIP: " << ipAddress << " " << ListeningState;
+
 }
 
 void MainWindow::sockDisc()
