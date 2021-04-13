@@ -1,11 +1,12 @@
-#include <QCoreApplication>
 #include "server.h"
+#include <QtGui>
 
-int main(int argc, char *argv[])
+int main(int argc, char** argv)
 {
-    QCoreApplication a(argc, argv);
+    QApplication app(argc, argv);
+    MyServer     server(2323);
 
-    Server server;
-    server.startServer();
-    return a.exec();
+    server.show();
+
+    return app.exec();
 }

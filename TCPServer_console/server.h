@@ -3,25 +3,27 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
-class Server: public QTcpServer
-{
-    Q_OBJECT
-public:
-    Server();
-    ~Server();
+#include <QWidget>
 
-    QTcpSocket* socket;
-    QByteArray Data;
+class QTcpServer;
+class QTextEdit;
+class QTcpSocket;
 
-public slots:
-    void startServer();
-    void incomConnection(qintptr socketDescriptor); //Метод по умолчания для сервера TCP - описание дейсвтий в случае присоединения нового клиента
-    void sockReady();
-    void sockDisc(); //Отключение клиента от сокета (удаления объекта)
+class MyServer : public QWidget {
+Q_OBJECT
+private:
+    QTcpServer* m_ptcpServer;
+    QTextEdit*  m_ptxt;
+    quint16     m_nNextBlockSize;
 
 private:
-    QTcpServer *tcpServer = nullptr;
-    QVector<QString> fortunes;
-};
+    void sendToClient(QTcpSocket* pSocket, const QString& str);
 
-#endif // SERVER_H
+public:
+    MyServer(int nPort, QWidget* pwgt = 0);
+
+public slots:
+    virtual void slotNewConnection();
+            void slotReadClient   ();
+};
+#endif  //_MyServer_h_
