@@ -1,6 +1,9 @@
 #ifndef TCPSERVER_H
 #define TCPSERVER_H
 
+#include <QString>
+#include <iostream>
+
 #include <QObject>
 #include <QWidget>
 
@@ -15,20 +18,25 @@
 #include <QMessageBox>
 
 #include <QTime>
+#include <QElapsedTimer>
 #include <QDataStream>
+
+#include <QtNetwork>
+#include <QtCore>
 
 class QTcpServer;
 class QTextEdit;
 class QTcpSocket;
 
-class MyServer : public QWidget {
+class MyServer : public QWidget
+{
 Q_OBJECT
 private:
-    QTcpServer* m_ptcpServer;
-    QTcpSocket* mTcpSocket;
+    QTcpServer* pTcpServer;
+    QTcpSocket* TcpSocket;
 
-    QTextEdit*  m_ptxt;
-    quint16     m_nNextBlockSize;
+    QTextEdit*  ptxt;
+    quint16     nNextBlockSize;
 
 
 private:
