@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "listenthread.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -22,7 +23,6 @@ QString MainWindow::StrInverting(QByteArray array)
     size = array.size();
     for(int i=0; i<size; i++) result[size-i]=array[i];
     result += " Marinenko G.V.";
-    ui->textBrowser_2->append(result);
     qDebug() << result;
     return (result);
 }
@@ -53,6 +53,7 @@ void MainWindow::on_pushButton_clicked() //.Connect to server
     }
     port = ui->lineEdit->text();
     qDebug() << port.toInt();
+    TcpServer->setMaxPendingConnections(4);
     if (!TcpServer->listen(IpAddress, port.toInt()))
     {
         QMessageBox::critical(0,
@@ -66,10 +67,10 @@ void MainWindow::on_pushButton_clicked() //.Connect to server
     else
     {
         statusString = "host address: " + IpAddress.toString()
-                        + "\nport: " + port + "\n";
+                        + "\nport: " + port;
         ui->textBrowser->append("<font color='blue'>" + statusString + "</font>");
         localTime = "Server started at: " + QTime::currentTime().toString("HH:mm:ss")
-                    + "\n" + statusString;
+                    + "\n" + statusString + "\n";
         RecordLogs(localTime, "", "","", 0);
 //                ui->textBrowser->setTextColor();
 //                ui->textBrowser->textBackgroundColor().green();
@@ -78,24 +79,37 @@ void MainWindow::on_pushButton_clicked() //.Connect to server
     connect(TcpServer, SIGNAL(newConnection()),
                 this,         SLOT(slotNewConnection())
                );
-    //    socket->connectToHost("127.0.0.1",5555);
 }
+
+//void MainWindow::reduceConnections(int pandingConnections)
+//{
+//    pandingConnections--;
+//}
 
 void MainWindow::slotNewConnection()
 {
     QTcpSocket* pClientSocket = TcpServer->nextPendingConnection();
+    QString localTime;
+
     TcpSocket = pClientSocket;
-
-    connect(pClientSocket, SIGNAL(readyRead()),
-            this,          SLOT(slotReadClient()));
-
-    connect(pClientSocket, SIGNAL(disconnected()),
-            pClientSocket, SLOT(deleteLater()));
-
-    qDebug() << "\nClient is connected!";
-    ui->textBrowser->append("\nClient is connected!");
+//    socketsList.push_back(*pClientSocket);
+//    connect(pClientSocket, SIGNAL(readyRead()),
+//            this,          SLOT(slotReadClient()));
+//    connect(pClientSocket, SIGNAL(disconnected()),
+//            pClientSocket, SLOT(reduceConnections(pandingConnections)));
+    ListenThread* thread = new ListenThread(pClientSocket, 0, 0);
+    connect(thread, SIGNAL(sendingCompleted(QString, QByteArray)),
+            this, SLOT(Recording(QString, QByteArray)));
+    thread->start();
+    localTime = QTime::currentTime().toString("HH:mm:ss");
+//    pandingConnections++;
+    ui->textBrowser->append("\n" + localTime + " - Client" + " is connected!");
 }
 
+//void MainWindow::SocketPopBack(QTcpSocket pClientSocket)
+//{
+//    socketsList.removeOne(pClientSocket);
+//}
 void MainWindow::slotReadClient()
 {
     QString         TextBoxMessage;
@@ -113,12 +127,9 @@ void MainWindow::slotReadClient()
     QString         strTime;
     QString         localTime;
 
-//    in.setVersion(QDataStream::Qt_4_2);
-    while(TcpSocket->bytesAvailable() > 0)
-    {
-        array = TcpSocket->readAll();
-        TcpSocket->write(array);
-    }
+    array = TcpSocket->readAll();
+    TcpSocket->write(array);
+
     TcpSocket->write(Message);
     localTime = QTime::currentTime().toString("HH:mm:ss");
     TextBoxMessage = localTime +
@@ -135,6 +146,48 @@ void MainWindow::slotReadClient()
     qDebug() << strMessageLogs;
     ui->textBrowser->append(strMessageLogs);
     ui->textBrowser_3->append(strMessageClient);
+}
+
+void MainWindow::showInfo(QByteArray logs, QString localTime)
+{
+    QString serverInfo;
+    QString clientInfo;
+    QString logStr;
+
+    logStr = logs;
+    serverInfo = localTime + " " + StrInverting(logs);
+    clientInfo = localTime + " " + logStr;
+
+    ui->textBrowser_3->append(clientInfo);
+    ui->textBrowser_2->append(serverInfo);
+}
+
+void MainWindow::Recording(QString LocalTime, QByteArray logs)
+{
+    QString     logFilePath;
+//    QByteArray  logsAsByte;
+
+    showInfo(logs, LocalTime);
+    logFilePath = ui->lineEdit_2->text();
+    if (logFilePath.isEmpty())
+    {
+        QMessageBox::critical(0,
+                              "Empty log-file path!",
+                              "Put the correct file path!"
+                             );
+        TcpServer->close();
+        this->close();
+        return;
+    }
+    QFile fileOut(logFilePath);
+    if(fileOut.open(QIODevice::Append | QIODevice::Text))
+    {
+        QTextStream stream( &fileOut );
+        stream << "\n\rCurrent time of connection: " + LocalTime;
+        stream << "\nClient: " + logs;
+        stream << "\nServer: " + StrInverting(logs);
+    }
+    fileOut.close();
 }
 
 void MainWindow::RecordLogs(QString ServerResponce, QString ClientRsponce,
@@ -180,7 +233,7 @@ void MainWindow::on_pushButton_2_clicked()
         TcpServer->deleteLater();
         ui->textBrowser->append(" ");
         ui->textBrowser->append("<font color='green'><b>Server successfully closed</b></font>");
-        localTime = "\nServer successfully closed at: "
+        localTime = "\n\nServer successfully closed at: "
                     + QTime::currentTime().toString("HH:mm:ss")
                     + "\n_______________________________________________________\n";;
         RecordLogs(localTime, "", "","", 0);
