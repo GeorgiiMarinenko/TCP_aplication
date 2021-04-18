@@ -3,7 +3,7 @@ s =socket.socket()
 host=socket.gethostname()
 port=4335
 s.connect(('192.168.1.78',port))
-s.send('Client 1 - python.'.encode())
+s.send('Client 1 - python'.encode())
 with open('received.txt','wb') as f:
     print ('file opened')
     print ('receiving data...')
