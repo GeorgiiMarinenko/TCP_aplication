@@ -77,39 +77,57 @@ void MainWindow::on_pushButton_clicked() //.Connect to server
         qDebug() << "host address: " << IpAddress;
     }
     connect(TcpServer, SIGNAL(newConnection()),
-                this,         SLOT(slotNewConnection())
-               );
+                this,         SLOT(slotNewConnection()));
 }
 
-//void MainWindow::reduceConnections(int pandingConnections)
-//{
-//    pandingConnections--;
-//}
+void MainWindow::reduceConnections(int pandingConnections)
+{
+    pandingConnections--;
+}
 
 void MainWindow::slotNewConnection()
 {
     QTcpSocket* pClientSocket = TcpServer->nextPendingConnection();
     QString localTime;
+    QString criticalLog;
+    QString clients;
 
     TcpSocket = pClientSocket;
 //    socketsList.push_back(*pClientSocket);
 //    connect(pClientSocket, SIGNAL(readyRead()),
 //            this,          SLOT(slotReadClient()));
-//    connect(pClientSocket, SIGNAL(disconnected()),
-//            pClientSocket, SLOT(reduceConnections(pandingConnections)));
-    ListenThread* thread = new ListenThread(pClientSocket, 0, 0);
-    connect(thread, SIGNAL(sendingCompleted(QString, QByteArray)),
-            this, SLOT(Recording(QString, QByteArray)));
-    thread->start();
-    localTime = QTime::currentTime().toString("HH:mm:ss");
-//    pandingConnections++;
-    ui->textBrowser->append("\n" + localTime + " - Client" + " is connected!");
+    connect(pClientSocket, SIGNAL(disconnected()),
+            this, SLOT(reduceConnections(int *)));
+    if (MainWindow::pandingConnections < 5)
+    {
+        ListenThread* thread = new ListenThread(pClientSocket, 0, 0);
+        connect(thread, SIGNAL(sendingCompleted(QString, QByteArray)),
+                this, SLOT(Recording(QString, QByteArray)));
+        thread->start();
+        localTime = QTime::currentTime().toString("HH:mm:ss");
+    }
+    else
+    {
+        QMessageBox::critical(0,
+                              "Max number of users",
+                              "Server is overloaded.\nNo more users - max:5"
+                             );
+        localTime = QTime::currentTime().toString("HH:mm:ss");
+        criticalLog = "\n\n*" + localTime + " Server is overloaded!\n";
+        RecordLogs(criticalLog, " ", "","", 0);
+        return;
+    }
+    MainWindow::pandingConnections++;
+    clients = QString::number(MainWindow::pandingConnections);
+    ui->textBrowser->append("\n" + localTime + " - Client "
+                            + clients + " is connected!");
 }
 
 //void MainWindow::SocketPopBack(QTcpSocket pClientSocket)
 //{
 //    socketsList.removeOne(pClientSocket);
 //}
+
 void MainWindow::slotReadClient()
 {
     QString         TextBoxMessage;
@@ -184,7 +202,7 @@ void MainWindow::Recording(QString LocalTime, QByteArray logs)
     {
         QTextStream stream( &fileOut );
         stream << "\n\rCurrent time of connection: " + LocalTime;
-        stream << "\nClient: " + logs;
+        stream << "\nClient " + QString::number(MainWindow::pandingConnections) + " : " + logs;
         stream << "\nServer: " + StrInverting(logs);
     }
     fileOut.close();

@@ -32,12 +32,12 @@ public:
     QByteArray      array;
     QTcpServer*     TcpServer;
     QTcpSocket*     TcpSocket;
-//    int             pandingConnections = 0;
 
     QString         IpAddressStr;
     QHostAddress    IpAddress;
     QString         port;
     QVector<QTcpSocket> socketsList;
+    int pandingConnections = 0;
 
 public slots:
     virtual void slotNewConnection();
@@ -46,7 +46,7 @@ public slots:
                     QString InvertStr, QString logs, int flag);
     void Recording(QString LocalTime, QByteArray logs);
     void showInfo(QByteArray logs, QString localTime);
-//    void reduceConnections(int pandingConnections);
+    void reduceConnections(int pandingConnections);
 //    void SocketPopBack(QTcpSocket pClientSocket);
 
 private slots:

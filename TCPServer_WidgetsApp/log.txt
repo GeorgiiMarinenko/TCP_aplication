@@ -1,0 +1,17 @@
+Server started at: 15:01:27
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 15:01:41
+Client 1 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+
+Server successfully closed at: 15:02:02
+_______________________________________________________
+Server started at: 15:05:52
+host address: 192.168.1.78
+port: 4335
+
+
+Server successfully closed at: 15:05:53
+_______________________________________________________
