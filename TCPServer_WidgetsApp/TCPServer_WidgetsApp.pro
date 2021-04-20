@@ -6,6 +6,10 @@ QT +=network widgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+CONFIG += app_bundle
+
+mySetOfExtraFiles.path = Contents/Resources
+QMAKE_BUNDLE_DATA += mySetOfExtraFiles
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.

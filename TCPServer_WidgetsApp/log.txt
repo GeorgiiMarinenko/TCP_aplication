@@ -15,3 +15,33 @@ port: 4335
 
 Server successfully closed at: 15:05:53
 _______________________________________________________
+Server started at: 14:22:55
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 14:23:02
+Client 1 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+
+Server successfully closed at: 14:23:32
+_______________________________________________________
+Server started at: 15:05:08
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 15:05:11
+Client 1 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+
+Server successfully closed at: 15:05:15
+_______________________________________________________
+Server started at: 15:06:07
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 15:06:10
+Client 1 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+
+Server successfully closed at: 15:06:12
+_______________________________________________________

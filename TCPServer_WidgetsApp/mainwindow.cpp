@@ -264,7 +264,7 @@ void MainWindow::on_pushButton_2_clicked()
 //    ui->MainWindow::centralwidget->close();
 }
 
-void MainWindow::on_pushButton_3_clicked()
-{
-    StrInverting(array);
-}
+//void MainWindow::on_pushButton_3_clicked()
+//{
+//    StrInverting(array);
+//}
