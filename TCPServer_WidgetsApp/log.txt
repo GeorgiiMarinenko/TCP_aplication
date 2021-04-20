@@ -45,3 +45,144 @@ Server:  nohtyp - 1 tneilC Marinenko G.V.
 
 Server successfully closed at: 15:06:12
 _______________________________________________________
+Server started at: 16:30:42
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:32:39
+Client 1 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+Current time of connection: 16:33:40
+Client 2 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+Current time of connection: 16:38:12
+Client 3 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+
+Server successfully closed at: 16:38:19
+_______________________________________________________
+Server started at: 16:38:20
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:38:52
+Client 4 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+Current time of connection: 16:40:00
+Client 5 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+
+*16:40:21 Server is overloaded!
+
+
+Server successfully closed at: 16:40:22
+_______________________________________________________
+Server started at: 16:40:22
+host address: 192.168.1.78
+port: 4335
+
+
+*16:41:48 Server is overloaded!
+Server started at: 16:42:33
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:42:38
+Client 1 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+Current time of connection: 16:42:45
+Client 2 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+Current time of connection: 16:46:19
+Client 3 : Client 1 - python
+Server:  nohtyp - 1 tneilC Marinenko G.V.
+Current time of connection: 16:47:12
+Client 4 : hello qwer
+Server:  rewq olleh Marinenko G.V.
+Current time of connection: 16:48:26
+Client 5 : null
+Server:  llun Marinenko G.V.Server started at: 16:51:35
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:52:02
+Client 1 : hello pesich
+Server:  hcisep olleh Marinenko G.V.
+Current time of connection: 16:57:44
+Client 2 : hello pes
+Server:  sep olleh Marinenko G.V.
+
+Server successfully closed at: 17:00:28
+_______________________________________________________
+Server started at: 17:02:32
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 17:02:47
+Client 1 : erwerwer
+Server:  rewrewre Marinenko G.V.
+Current time of connection: 17:03:23
+Client 3 : sdfdsf
+Server:  fsdfds Marinenko G.V.
+Current time of connection: 17:03:54
+Client 4 : hello
+Server:  olleh Marinenko G.V.
+
+*17:05:26 Server is overloaded!
+
+
+Server successfully closed at: 17:05:27
+_______________________________________________________
+Server started at: 17:05:28
+host address: 192.168.1.78
+port: 4335
+Server started at: 17:07:56
+host address: 192.168.1.78
+port: 4335
+Server started at: 17:10:03
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 17:10:14
+Client 1 : test
+Server:  tset Marinenko G.V.Server started at: 17:11:08
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 17:11:23
+Client 1 : test
+Server:  tset Marinenko G.V.
+Current time of connection: 17:11:34
+Client 1 : test
+Server:  tset Marinenko G.V.
+Current time of connection: 17:11:58
+Client 2 : test
+Server:  tset Marinenko G.V.Server started at: 17:13:22
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 17:13:42
+Client 2 : test
+Server:  tset Marinenko G.V.
+Current time of connection: 17:13:43
+Client 2 : test
+Server:  tset Marinenko G.V.
+Current time of connection: 17:13:44
+Client 2 : test
+Server:  tset Marinenko G.V.
+Current time of connection: 17:13:59
+Client 2 : test
+Server:  tset Marinenko G.V.
+
+Server successfully closed at: 17:14:29
+_______________________________________________________
+Server started at: 17:14:50
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 17:15:06
+Client 2 : test
+Server:  tset Marinenko G.V.
+Current time of connection: 17:15:09
+Client 2 : test
+Server:  tset Marinenko G.V.

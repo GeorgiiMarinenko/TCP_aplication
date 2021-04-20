@@ -46,7 +46,7 @@ public slots:
                     QString InvertStr, QString logs, int flag);
     void Recording(QString LocalTime, QByteArray logs);
     void showInfo(QByteArray logs, QString localTime);
-    void reduceConnections(int pandingConnections);
+    void reduceConnections();
 //    void SocketPopBack(QTcpSocket pClientSocket);
 
 private slots:

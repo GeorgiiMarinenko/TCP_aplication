@@ -80,9 +80,13 @@ void MainWindow::on_pushButton_clicked() //.Connect to server
                 this,         SLOT(slotNewConnection()));
 }
 
-void MainWindow::reduceConnections(int pandingConnections)
+void MainWindow::reduceConnections()
 {
-    pandingConnections--;
+    QString infoStr;
+    MainWindow::pandingConnections--;
+    infoStr = "Client is disconnected from host\nCurrent users: "
+            + QString::number(MainWindow::pandingConnections);
+    ui->textBrowser->append(infoStr);
 }
 
 void MainWindow::slotNewConnection()
@@ -97,7 +101,7 @@ void MainWindow::slotNewConnection()
 //    connect(pClientSocket, SIGNAL(readyRead()),
 //            this,          SLOT(slotReadClient()));
     connect(pClientSocket, SIGNAL(disconnected()),
-            this, SLOT(reduceConnections(int *)));
+            this, SLOT(reduceConnections()));
     if (MainWindow::pandingConnections < 5)
     {
         ListenThread* thread = new ListenThread(pClientSocket, 0, 0);
@@ -255,6 +259,7 @@ void MainWindow::on_pushButton_2_clicked()
                     + QTime::currentTime().toString("HH:mm:ss")
                     + "\n_______________________________________________________\n";;
         RecordLogs(localTime, "", "","", 0);
+        MainWindow::pandingConnections = 0;
     }
     else
     {
