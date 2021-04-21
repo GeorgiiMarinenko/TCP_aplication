@@ -52,8 +52,17 @@ void MainWindow::on_pushButton_clicked() //.Connect to server
         IpAddressStr = QHostAddress(QHostAddress::LocalHost).toString();
     }
     port = ui->lineEdit->text();
+    if (port.isEmpty())
+    {
+        QMessageBox::critical(0,
+                              "Empty port",
+                              "Put the number of port!"
+                             );
+        return;
+    }
     qDebug() << port.toInt();
-    TcpServer->setMaxPendingConnections(4);
+    //Max Pending connetcion - doesn't work
+//    TcpServer->setMaxPendingConnections(4);
     if (!TcpServer->listen(IpAddress, port.toInt()))
     {
         QMessageBox::critical(0,
@@ -84,7 +93,7 @@ void MainWindow::reduceConnections()
 {
     QString infoStr;
     MainWindow::pandingConnections--;
-    infoStr = "Client is disconnected from host\nCurrent users: "
+    infoStr = "<font color=white>Client is disconnected from host\nCurrent users: </font>"
             + QString::number(MainWindow::pandingConnections);
     ui->textBrowser->append(infoStr);
 }
@@ -123,8 +132,9 @@ void MainWindow::slotNewConnection()
     }
     MainWindow::pandingConnections++;
     clients = QString::number(MainWindow::pandingConnections);
-    ui->textBrowser->append("\n" + localTime + " - Client "
-                            + clients + " is connected!");
+    ui->textBrowser->append(" ");
+    ui->textBrowser->append("<font color=white>\n" + localTime + " - Client "
+                            + clients + " is connected!</font>");
 }
 
 //void MainWindow::SocketPopBack(QTcpSocket pClientSocket)
@@ -138,7 +148,6 @@ void MainWindow::slotReadClient()
     QString         strMessageLogs;
     QString         strMessageClient;
     QString         logs;
-    char            Message[42] = "Hello, Client! I'm Georgii's server\r\n";
 
     QElapsedTimer   timer;
     timer.start(); //TIMER ON
@@ -152,7 +161,6 @@ void MainWindow::slotReadClient()
     array = TcpSocket->readAll();
     TcpSocket->write(array);
 
-    TcpSocket->write(Message);
     localTime = QTime::currentTime().toString("HH:mm:ss");
     TextBoxMessage = localTime +
                      " - Hello, Client! I'm Georgii's server\r\n";

@@ -185,4 +185,355 @@ Client 2 : test
 Server:  tset Marinenko G.V.
 Current time of connection: 17:15:09
 Client 2 : test
+Server:  tset Marinenko G.V.Server started at: 14:53:11
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 14:53:26
+Client 1 : hello 1
+Server:  1 olleh Marinenko G.V.
+Current time of connection: 14:53:35
+Client 1 : hello 2
+Server:  2 olleh Marinenko G.V.
+
+Server successfully closed at: 14:53:53
+_______________________________________________________
+Server started at: 14:54:40
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 14:54:49
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 14:54:53
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 14:54:58
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.Server started at: 14:56:04
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 14:56:24
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 14:56:30
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 14:56:35
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+Current time of connection: 14:56:54
+Client 2 : hello4
+Server:  4olleh Marinenko G.V.
+Current time of connection: 14:59:13
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 14:59:16
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.Server started at: 14:59:44
+host address: 192.168.1.78
+port: 4335
+
+
+Server successfully closed at: 14:59:45
+_______________________________________________________
+Server started at: 14:59:46
+host address: 192.168.1.78
+port: 4335
+
+
+Server successfully closed at: 14:59:46
+_______________________________________________________
+Server started at: 14:59:47
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 14:59:55
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+
+Server successfully closed at: 14:59:58
+_______________________________________________________
+Server started at: 15:00:08
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 15:00:20
+Client 0 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:00:23
+Client 0 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:00:57
+Client 0 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:01:00
+Client 0 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:01:20
+Client 0 : h
+Server:  h Marinenko G.V.
+Current time of connection: 15:01:22
+Client 0 : q
+Server:  q Marinenko G.V.
+Current time of connection: 15:01:35
+Client 0 : q
+Server:  q Marinenko G.V.
+Current time of connection: 15:01:38
+Client 0 : w
+Server:  w Marinenko G.V.
+Current time of connection: 15:02:03
+Client 0 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:02:06
+Client 0 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:02:09
+Client 0 : hello3
+Server:  3olleh Marinenko G.V.
+
+Server successfully closed at: 15:02:17
+_______________________________________________________
+Server started at: 15:02:54
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 15:02:59
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:03:01
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:03:05
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+
+Server successfully closed at: 15:05:37
+_______________________________________________________
+Server started at: 15:08:47
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 15:08:52
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 15:09:02
+Client 1 : hello334
+Server:  433olleh Marinenko G.V.
+Current time of connection: 15:09:34
+Client 1 : hello5656
+Server:  6565olleh Marinenko G.V.
+Current time of connection: 15:10:12
+Client 1 : hello66
+Server:  66olleh Marinenko G.V.
+Current time of connection: 15:12:02
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 15:12:35
+Client 1 : hello34
+Server:  43olleh Marinenko G.V.
+Current time of connection: 15:15:24
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 15:16:14
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 15:17:38
+Client 1 : he
+Server:  eh Marinenko G.V.
+Current time of connection: 15:18:20
+Client 1 : mes1
+Server:  1sem Marinenko G.V.
+Current time of connection: 15:18:26
+Client 1 : mes2
+Server:  2sem Marinenko G.V.
+Current time of connection: 15:18:37
+Client 1 : mes3
+Server:  3sem Marinenko G.V.
+Current time of connection: 15:23:38
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:23:41
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:23:58
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:24:01
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:24:33
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:24:35
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:24:53
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:24:56
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:30:45
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 15:32:00
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:32:03
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:38:15
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:38:47
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:39:16
+Client 1 : hello4
+Server:  4olleh Marinenko G.V.
+Current time of connection: 15:40:44
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:42:07
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:42:10
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:42:13
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+Current time of connection: 15:46:45
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:46:48
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:46:51
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+Current time of connection: 15:50:18
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:50:25
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:51:22
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:51:25
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:51:27
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+Current time of connection: 15:53:39
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 15:54:33
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:54:35
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:54:39
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+Current time of connection: 15:55:22
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:55:24
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+Current time of connection: 15:56:16
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 15:56:20
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.
+
+Server successfully closed at: 15:56:35
+_______________________________________________________
+Server started at: 15:56:37
+host address: 192.168.1.78
+port: 4335
+Server started at: 15:57:12
+host address: 192.168.1.78
+port: 4335
+Server started at: 16:00:00
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:00:23
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 16:00:26
+Client 1 : hello2
+Server:  2olleh Marinenko G.V.Server started at: 16:01:29
+host address: 192.168.1.78
+port: 4335
+Server started at: 16:02:22
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:04:39
+Client 1 : hello111
+Server:  111olleh Marinenko G.V.
+Current time of connection: 16:07:02
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.Server started at: 16:08:46
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:09:05
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 16:11:59
+Client 1 : hello1
+Server:  1olleh Marinenko G.V.
+Current time of connection: 16:12:04
+Client 1 : hello3
+Server:  3olleh Marinenko G.V.
+Current time of connection: 16:18:38
+Client 1 : Marinenko_client1
+Server:  1tneilc_okneniraM Marinenko G.V.
+Current time of connection: 16:19:04
+Client 1 : Marinenko_client2
+Server:  2tneilc_okneniraM Marinenko G.V.
+Current time of connection: 16:21:57
+Client 1 : test
 Server:  tset Marinenko G.V.
+Current time of connection: 16:31:48
+Client 1 : hello
+Server:  olleh Marinenko G.V.
+Current time of connection: 16:32:26
+Client 1 : nice
+Server:  ecin Marinenko G.V.
+
+Server successfully closed at: 16:37:59
+_______________________________________________________
+Server started at: 16:54:01
+host address: 192.168.1.78
+port: 4335
+
+Current time of connection: 16:54:35
+Client 1 : TestMessage1
+Server:  1egasseMtseT Marinenko G.V.
+Current time of connection: 16:55:12
+Client 2 : TestMessage2-client2
+Server:  2tneilc-2egasseMtseT Marinenko G.V.
+
+Server successfully closed at: 16:55:36
+_______________________________________________________
+Server started at: 17:03:39
+host address: 192.168.1.78
+port: 4335
+
+
+Server successfully closed at: 17:03:41
+_______________________________________________________
+Server started at: 17:03:45
+host address: 192.168.1.78
+port: 4335
