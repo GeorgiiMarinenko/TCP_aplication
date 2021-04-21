@@ -58,6 +58,3 @@ while choice < 5:
             f.close
             s.close()
             print ('connection closed')
-
-
-
