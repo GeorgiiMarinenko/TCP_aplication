@@ -28,7 +28,7 @@ void ListenThread::slotReadClient()
 
     QString         strTime;
     QString         localTime;
-    QByteArray         serverResponce;
+    QByteArray      serverResponce;
 
     array = pClientSocket->readAll();
     serverResponce = StrInverting(array);

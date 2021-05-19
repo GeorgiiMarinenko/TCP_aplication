@@ -93,7 +93,8 @@ void MainWindow::reduceConnections()
 {
     QString infoStr;
     MainWindow::pandingConnections--;
-    infoStr = "<font color=white>Client is disconnected from host\nCurrent users: </font>"
+    infoStr = "<font color=white>Client is disconnected from host"
+"               <b>Current users: </b></font>"
             + QString::number(MainWindow::pandingConnections);
     ui->textBrowser->append(infoStr);
 }
@@ -106,12 +107,14 @@ void MainWindow::slotNewConnection()
     QString clients;
 
     TcpSocket = pClientSocket;
+//    pClientSocket->write("Authorized");
+    MainWindow::pandingConnections++;
 //    socketsList.push_back(*pClientSocket);
 //    connect(pClientSocket, SIGNAL(readyRead()),
 //            this,          SLOT(slotReadClient()));
     connect(pClientSocket, SIGNAL(disconnected()),
             this, SLOT(reduceConnections()));
-    if (MainWindow::pandingConnections < 5)
+    if (MainWindow::pandingConnections <= 5)
     {
         ListenThread* thread = new ListenThread(pClientSocket, 0, 0);
         connect(thread, SIGNAL(sendingCompleted(QString, QByteArray)),
@@ -125,12 +128,12 @@ void MainWindow::slotNewConnection()
                               "Max number of users",
                               "Server is overloaded.\nNo more users - max:5"
                              );
+        pClientSocket->write("Error - max number of users");
         localTime = QTime::currentTime().toString("HH:mm:ss");
         criticalLog = "\n\n*" + localTime + " Server is overloaded!\n";
         RecordLogs(criticalLog, " ", "","", 0);
         return;
     }
-    MainWindow::pandingConnections++;
     clients = QString::number(MainWindow::pandingConnections);
     ui->textBrowser->append(" ");
     ui->textBrowser->append("<font color=white>\n" + localTime + " - Client "
